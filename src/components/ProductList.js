@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
-import { fetchProducts } from "../api"; // Import the fetchProducts function from your api.js
+import { fetchProducts } from "../services/api"; // Import the fetchProducts function from your api.js
 import { Grid } from "@mui/material"; // Import Grid from Material-UI
 
 function ProductList({ addToCart }) {

@@ -10,7 +10,7 @@ import {
   Grid,
 } from "@mui/material";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
-import { createProduct } from "../api"; // Import the createProduct function
+import { createProduct } from "../services/api"; // Import the createProduct function
 import { ToastContainer, toast } from "react-toastify"; // Import ToastContainer and toast
 
 import "react-toastify/dist/ReactToastify.css"; // Import default styles for react-toastify

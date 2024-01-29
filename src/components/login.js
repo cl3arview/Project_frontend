@@ -3,7 +3,7 @@ import { Grid, Paper, Avatar, TextField, Button } from "@mui/material";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { loginUser } from "../api"; // Import the loginUser function from your api.js
+import { loginUser } from "../services/api"; // Import the loginUser function from your api.js
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 const Login = () => {

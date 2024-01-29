@@ -9,7 +9,7 @@ import RemoveShoppingCartIcon from "@mui/icons-material/RemoveShoppingCart";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
-import { addProductToCart } from "../api"; // Import the addProductToCart function
+import { addProductToCart } from "../services/api"; // Import the addProductToCart function
 
 const drawerStyle = {
   width: 300,

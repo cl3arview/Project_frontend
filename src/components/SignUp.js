@@ -8,7 +8,7 @@ import {
   Button,
 } from "@mui/material";
 import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
-import { registerUser } from "../api"; // Import the registerUser function
+import { registerUser } from "../services/api"; // Import the registerUser function
 import { toast, ToastContainer } from "react-toastify"; // Import Toastify
 
 import "react-toastify/dist/ReactToastify.css"; // Import Toastify CSS
