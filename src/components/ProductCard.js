@@ -1,8 +1,17 @@
-import React, { useState } from 'react';
-import { Card, CardHeader, CardMedia, CardContent, CardActions, IconButton, Typography, Collapse } from '@mui/material';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import React, { useState } from "react";
+import {
+  Card,
+  CardHeader,
+  CardMedia,
+  CardContent,
+  CardActions,
+  IconButton,
+  Typography,
+  Collapse,
+} from "@mui/material";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import ShareIcon from "@mui/icons-material/Share";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const ProductCard = ({ product, addToCart }) => {
   const [expanded, setExpanded] = useState(false);
@@ -31,10 +40,12 @@ const ProductCard = ({ product, addToCart }) => {
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          {product.description} {/* Display the product description from the prop */}
+          {product.description}{" "}
+          {/* Display the product description from the prop */}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Price: ${product.price.toFixed(2)} {/* Display the product price from the prop */}
+          Price: ${product.price.toFixed(2)}{" "}
+          {/* Display the product price from the prop */}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -55,13 +66,11 @@ const ProductCard = ({ product, addToCart }) => {
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           {/* Display the product description within the expanding content */}
-          <Typography paragraph>
-            {product.description}
-          </Typography>
+          <Typography paragraph>{product.description}</Typography>
         </CardContent>
       </Collapse>
     </Card>
   );
-}
+};
 
 export default ProductCard;

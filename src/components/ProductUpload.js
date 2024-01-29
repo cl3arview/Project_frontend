@@ -1,16 +1,25 @@
-import React, { useState } from 'react';
-import { Typography, TextField, Button, Card, CardContent, CardMedia, Container, Grid } from '@mui/material';
-import CloudUploadIcon from '@mui/icons-material/CloudUpload';
-import { createProduct } from '../api'; // Import the createProduct function
-import { ToastContainer, toast } from 'react-toastify'; // Import ToastContainer and toast
+import React, { useState } from "react";
+import {
+  Typography,
+  TextField,
+  Button,
+  Card,
+  CardContent,
+  CardMedia,
+  Container,
+  Grid,
+} from "@mui/material";
+import CloudUploadIcon from "@mui/icons-material/CloudUpload";
+import { createProduct } from "../api"; // Import the createProduct function
+import { ToastContainer, toast } from "react-toastify"; // Import ToastContainer and toast
 
-import 'react-toastify/dist/ReactToastify.css'; // Import default styles for react-toastify
+import "react-toastify/dist/ReactToastify.css"; // Import default styles for react-toastify
 
 const ProductUpload = () => {
   const [productInfo, setProductInfo] = useState({
-    name: '',
-    price: '',
-    description: '', // Add description field
+    name: "",
+    price: "",
+    description: "", // Add description field
     image: null,
   });
 
@@ -43,35 +52,34 @@ const ProductUpload = () => {
         productInfo.name,
         productInfo.price,
         productInfo.description, // Include description
-        productInfo.image
+        productInfo.image,
       );
 
       // Assuming the API call is successful, you can handle the response here
-      console.log('Product created:', newProduct);
+      console.log("Product created:", newProduct);
 
       // Display a success toast
-      toast.success('Product uploaded successfully', {
-        position: 'top-right',
+      toast.success("Product uploaded successfully", {
+        position: "top-right",
         autoClose: 3000, // Close the toast after 3 seconds
         hideProgressBar: false,
       });
 
       // Clear the form and image preview
       setProductInfo({
-        name: '',
-        price: '',
-        description: '', // Clear description
+        name: "",
+        price: "",
+        description: "", // Clear description
         image: null,
       });
       setImagePreview(null);
-
     } catch (error) {
       // Handle errors, e.g., display an error message to the user
-      console.error('Error creating product:', error);
+      console.error("Error creating product:", error);
 
       // Display an error toast
-      toast.error('Error uploading product', {
-        position: 'top-right',
+      toast.error("Error uploading product", {
+        position: "top-right",
         autoClose: 3000, // Close the toast after 3 seconds
         hideProgressBar: false,
       });
@@ -82,12 +90,22 @@ const ProductUpload = () => {
     <Container>
       <Grid container justifyContent="center" alignItems="center">
         <Grid item xs={12} sm={8} md={6}>
-          <div style={{ padding: '20px' }}> {/* Add padding to the container */}
-            <Typography variant="h5" gutterBottom style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <div style={{ padding: "20px" }}>
+            {" "}
+            {/* Add padding to the container */}
+            <Typography
+              variant="h5"
+              gutterBottom
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
               Upload a New Product
             </Typography>
             <form>
-              <TextField 
+              <TextField
                 name="name"
                 label="Product Name"
                 variant="outlined"
@@ -116,12 +134,21 @@ const ProductUpload = () => {
                 value={productInfo.description} // Value for description
                 onChange={handleChange}
               />
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '20px 0' }}> {/* Add margin */}
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  margin: "20px 0",
+                }}
+              >
+                {" "}
+                {/* Add margin */}
                 <input
                   type="file"
                   accept="image/*"
                   id="image-upload"
-                  style={{ display: 'none' }}
+                  style={{ display: "none" }}
                   onChange={handleImageUpload}
                 />
                 <label htmlFor="image-upload">
@@ -163,7 +190,11 @@ const ProductUpload = () => {
       </Grid>
 
       {/* Add the ToastContainer component for displaying toasts */}
-      <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} />
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+      />
     </Container>
   );
 };

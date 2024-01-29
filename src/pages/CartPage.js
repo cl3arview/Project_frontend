@@ -1,6 +1,6 @@
-import React from 'react';
-import ProductCard from '../components/ProductCard';
-import Cart from '../components/Cart';
+import React from "react";
+import ProductCard from "../components/ProductCard";
+import Cart from "../components/Cart";
 
 const CartPage = ({ cartItems, addToCart, removeFromCart }) => {
   return (

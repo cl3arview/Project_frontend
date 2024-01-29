@@ -1,10 +1,11 @@
-import axios from 'axios';
+import axios from "axios";
 
 // Define your API endpoint URL
-const apiUrl = 'https://localhost:7176/api/';
+const apiUrl = "https://localhost:7176/api/";
 
-const serverAddress = 'https://localhost:7176'; // Your server address
-axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('token')}`;
+const serverAddress = "https://localhost:7176"; // Your server address
+axios.defaults.headers.common["Authorization"] =
+  `Bearer ${localStorage.getItem("token")}`;
 
 // Function to fetch all products
 export const fetchProducts = async () => {
@@ -35,10 +36,10 @@ export const fetchProductById = async (id) => {
 // Function to create a new product
 export const createProduct = async (name, price, description, imageFile) => {
   const formData = new FormData();
-  formData.append('name', name);
-  formData.append('price', price);
-  formData.append('description', description); // Add description
-  formData.append('imageFile', imageFile);
+  formData.append("name", name);
+  formData.append("price", price);
+  formData.append("description", description); // Add description
+  formData.append("imageFile", imageFile);
 
   try {
     const response = await axios.post(`${apiUrl}Products`, formData);
@@ -49,12 +50,17 @@ export const createProduct = async (name, price, description, imageFile) => {
 };
 
 // Function to update an existing product by ID
-export const updateProduct = async (id, productData, description, imageFile) => {
+export const updateProduct = async (
+  id,
+  productData,
+  description,
+  imageFile,
+) => {
   const formData = new FormData();
-  formData.append('name', productData.name);
-  formData.append('price', productData.price);
-  formData.append('description', description); // Add description
-  formData.append('imageFile', imageFile);
+  formData.append("name", productData.name);
+  formData.append("price", productData.price);
+  formData.append("description", description); // Add description
+  formData.append("imageFile", imageFile);
 
   try {
     const response = await axios.put(`${apiUrl}Products/${id}`, formData);
@@ -63,7 +69,6 @@ export const updateProduct = async (id, productData, description, imageFile) => 
     throw error;
   }
 };
-
 
 // Function to delete a product by ID
 export const deleteProduct = async (id) => {
@@ -100,7 +105,6 @@ export const loginUser = async (email, password) => {
     throw error;
   }
 };
-
 
 // Function to retrieve the user's cart
 export const getCartByUserId = async (userId) => {
